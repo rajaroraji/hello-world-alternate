@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world-flipper
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-world-flipper
+  template:
+    metadata:
+      labels:
+        app: hello-world-flipper
+    spec:
+      containers:
+      - name: hello-world-flipper
+        image: <your-docker-image>
+        ports:
+        - containerPort: 5000
